@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'Karasha';
+    src: url('./font/Karasha.otf') format('opentype');
+}
+@font-face {
+    font-family: 'Terex';
+    src: url('./font/Terex.otf') format('opentype');
+}
