@@ -36,7 +36,7 @@ const NavBar = () => {
     >
       <header className="flex max-w-[62rem] px-5 sm:px-3 h-16 mx-auto justify-between items-center">
         <a aria-label="logo" href="/">
-          <h1 className="font-karasha tracking-widest uppercase cursor-pointer rounded-md text-2xl md:px-5 md:text-xl">
+          <h1 className="font-shuriken tracking-wide uppercase cursor-pointer rounded-md text-2xl md:px-5 md:text-xl">
             joshua betco
           </h1>
         </a>

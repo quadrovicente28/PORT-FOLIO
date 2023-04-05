@@ -9,7 +9,9 @@ export default {
     fontFamily: {
       poppins: ['Poppins', 'sans-serif'],
       karasha: ['Karasha', 'sans-serif'],
-      terex: ['Terex', 'sans-serif']
+      terex: ['Terex', 'sans-serif'],
+      mareka: ['Mareka', 'sans'],
+      shuriken: ['Shuriken', 'sans'],
     },
     screens: {
       "2xl": { max: "1535px" },
@@ -21,7 +23,7 @@ export default {
       lg: { max: "1137px" },
       // => @media (max-width: 1023px) { ... }
 
-      xmd: { max: "920px" },
+      xmd: { max: "824px" },
 
       md: { max: "767px" },
       // => @media (max-width: 767px) { ... }

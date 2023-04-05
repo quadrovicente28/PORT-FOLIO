@@ -10,3 +10,11 @@
     font-family: 'Terex';
     src: url('./font/Terex.otf') format('opentype');
 }
+@font-face {
+    font-family: 'Mareka';
+    src: url('./font/Mareka.otf') format('opentype');
+}
+@font-face {
+    font-family: 'Shuriken';
+    src: url('./font/TheLastShuriken.ttf') format('truetype');
+}
