@@ -6,8 +6,8 @@ import { useScrollPosition } from "../hooks/useScrollPosition";
 import Modal from "../modal/Modal";
 import { useMediaQuery } from "@react-hook/media-query";
 
-const NavBar = () => {
-  const [nav, setNav] = useState(false);
+const NavBar = ({nav, setNav}) => {
+ 
   const [isOpen, setOpen] = useState(false);
 
   const handleNav = () => {

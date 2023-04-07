@@ -5,11 +5,11 @@ import NavBar from './components/NavBar'
 import Projects from './components/Projects'
 
 function App() {
-
+  const [nav, setNav] = useState(false);
   return (
     <div>
-      <NavBar />
-      <HeroSection />
+      <NavBar nav={nav} setNav={setNav} />
+      <HeroSection nav={nav} />
       <Projects />
       <About />
     </div>

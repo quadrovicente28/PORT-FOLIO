@@ -23,7 +23,7 @@ export default {
       lg: { max: "1137px" },
       // => @media (max-width: 1023px) { ... }
 
-      xmd: { max: "824px" },
+      xmd: { max: "852px" },
 
       md: { max: "767px" },
       // => @media (max-width: 767px) { ... }
@@ -32,8 +32,13 @@ export default {
       // => @media (max-width: 639px) { ... }
       xsm: { max: "582px" },
       xxsm: { max: "485px" },
+      xxxsm: {max: "320px"}
     },
-    extend: {},
+    extend: {
+      backgroundImage: {
+        'samurai': "url('../assets/bg.jpg')",
+      }
+    },
   },
   plugins: [],
 }
