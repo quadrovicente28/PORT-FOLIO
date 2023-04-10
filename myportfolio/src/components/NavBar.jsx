@@ -1,25 +1,22 @@
 import React, { useEffect } from "react";
 import Hamburger from "hamburger-react";
-import { useState } from "react";
 import NavItems from "./NavItems";
 import { useScrollPosition } from "../hooks/useScrollPosition";
 import Modal from "../modal/Modal";
-import { useMediaQuery } from "@react-hook/media-query";
+import { useState } from "react";
 
-const NavBar = ({nav, setNav}) => {
- 
+const NavBar = ({ nav, setNav, belowMd }) => {
   const [isOpen, setOpen] = useState(false);
 
   const handleNav = () => {
     setNav(!nav);
     setOpen(!isOpen);
   };
-  const aboveMd = useMediaQuery("(max-width: 767px)");
 
   useEffect(() => {
-    setNav(!aboveMd);
-    setOpen(!aboveMd);
-  }, [aboveMd]);
+    setNav(!belowMd);
+    setOpen(!belowMd);
+  }, [belowMd]);
 
   const scrollPosition = useScrollPosition();
 
@@ -41,12 +38,7 @@ const NavBar = ({nav, setNav}) => {
           </h1>
         </a>
         <nav className="md:flex hidden md-1 z-[3]">
-          <Hamburger
-            toggled={isOpen}
-            onToggle={handleNav}
-            size={28}
-            direction="right"
-          />
+          <Hamburger toggled={isOpen} onToggle={handleNav} size={28} />
         </nav>
 
         <nav className="md:hidden">

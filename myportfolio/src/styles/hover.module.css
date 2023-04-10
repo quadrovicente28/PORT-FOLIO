@@ -1,22 +1,17 @@
+.mainpic {
+  max-width: 400px;
+  max-height: 300px;
+  transition-property: opacity;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  transition-duration: 500ms;
+  border-radius: 100px;
+}
 .jappic {
-    max-width: 400px;
-    max-height: 300px;
-    position: absolute;
-    opacity: 0;
-    transition: opacity 500ms ease-out;
-    border-radius: 100px;
-  }
-  .jappic:hover {
-    opacity: 1;
-    transition: opacity 500ms ease-in;
-  }
-
-  .mainpic {
-    max-width: 400px;
-    max-height: 300px;
-    transition-property: opacity;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 150ms;
-    transition-duration: 500ms;
-    border-radius: 100px;
-  }
+  max-width: 400px;
+  max-height: 300px;
+  position: absolute;
+  opacity: 0;
+  transition: opacity 500ms ease-out;
+  border-radius: 100px;
+}
