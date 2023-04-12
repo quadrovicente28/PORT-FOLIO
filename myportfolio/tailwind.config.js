@@ -32,7 +32,8 @@ export default {
       // => @media (max-width: 639px) { ... }
       xsm: { max: "582px" },
       xxsm: { max: "485px" },
-      xxxsm: {max: "320px"}
+      xxxsm: {max: "320px"},
+      xxxxsm: {max: "357px"},
     },
     extend: {
       backgroundImage: {

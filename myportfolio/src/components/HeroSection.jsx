@@ -5,27 +5,36 @@ import sheath from "../assets/sheath.png";
 import hover from "../styles/hover.module.css";
 import { useState, useEffect } from "react";
 import { AiOutlineGithub, AiFillLinkedin } from "react-icons/ai";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import DelayedLinks from "../reusable component/DelayedLinks";
 
-const HeroSection = ({ nav, belowMd }) => {
+
+const HeroSection = ({ nav, belowMd, }) => {
   const [isHovering, setIsHovering] = useState(false);
   const [isClicked, setIsClicked] = useState(false);
+  const [isGithub, setIsGithub] = useState(false);
 
   const handleClick = () => {
     setIsClicked(!isClicked);
   };
 
+  const handleGithub = () => {
+    setIsGithub(!isGithub);
+  };
+  
   useEffect(() => {
     const clickTimeout = setTimeout(() => {
       setIsClicked(false);
+      setIsGithub(false);
+      setIsHovering(false);
     }, 2200);
 
     return () => {
       clearTimeout(clickTimeout);
     };
-  }, [isClicked]);
-
+  }, [isClicked, isGithub]);
+  
+  
   return (
     <section
       id="herosection"
@@ -41,29 +50,32 @@ const HeroSection = ({ nav, belowMd }) => {
           </p>
           <div className="flex flex-col items-center">
             {!nav || !belowMd ? (
-                <motion.img
-                  key="sword"
-                  animate={{
-                    x:
-                      (isHovering && isClicked) || (!isHovering && isClicked)
-                        ? [null, 66, 200, 150]
-                        : isHovering
-                        ? 5
-                        : 0,
-                    rotate: isClicked ? [0, -5, 90, -100] : 0,
-                  }}
-                  transition={{
-                    x: isClicked ? { duration: 1 } : { duration: 0.1 },
-                    rotate: {
-                      delay: 0.2,
-                      duration: 1.8,
-                      ease: [0.1, 0.22, 0.22, 0.1],
-                    },
-                  }}
-                  src={sword}
-                  alt="sword"
-                  className="flex items-center justify-center w-[300px] mt-5 transition-transform"
-                />
+              <motion.img
+                key="sword"
+                animate={{
+                  x:
+                    (isHovering && isClicked) || (!isHovering && isClicked)
+                      ? [null, 66, 200, 150]
+                      : (isHovering && isGithub) || (!isHovering && isGithub)
+                      ? [null, 66, 100, 20]
+                      : isHovering
+                      ? 5
+                      : 0,
+                  rotate: isClicked || isGithub ? [0, -5, 90, -100] : 0,
+                }}
+                transition={{
+                  x:
+                    isClicked || isGithub ? { duration: 1 } : { duration: 0.1 },
+                  rotate: {
+                    delay: 0.2,
+                    duration: 1.8,
+                    ease: [0.1, 0.22, 0.22, 0.1],
+                  },
+                }}
+                src={sword}
+                alt="sword"
+                className="flex items-center justify-center w-[300px] mt-5 transition-transform"
+              />
             ) : (
               ""
             )}
@@ -81,7 +93,8 @@ const HeroSection = ({ nav, belowMd }) => {
                 whileHover={{ x: -5 }}
                 src={sheath}
                 alt="sheath"
-                className="absolute flex items-center justify-center w-[300px] mt-5"
+                className="absolute flex items-center justify-center w-[300px] xxxsm:w-[260px] xxxxsm:w-[265px]  mt-5"
+                
               />
             ) : (
               ""
@@ -97,8 +110,10 @@ const HeroSection = ({ nav, belowMd }) => {
               setIsHovering={setIsHovering}
             >
               <AiOutlineGithub
-                style={{ pointerEvents: "auto" }}
-                onClick={handleClick}
+                style={{
+                  pointerEvents: isClicked || isGithub ? "none" : "auto",
+                }}
+                onClick={handleGithub}
                 className="mx-10"
                 size={"38px"}
               />
@@ -111,7 +126,9 @@ const HeroSection = ({ nav, belowMd }) => {
               setIsHovering={setIsHovering}
             >
               <AiFillLinkedin
-                style={{ pointerEvents: "auto" }}
+                style={{
+                  pointerEvents: isClicked || isGithub ? "none" : "auto",
+                }}
                 onClick={handleClick}
                 className="mx-10"
                 size={"38px"}
