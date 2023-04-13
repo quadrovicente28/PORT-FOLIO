@@ -28,7 +28,7 @@ const NavBar = ({ nav, setNav, belowMd, navBarTop }) => {
     <div
       className={classNames(
         scrollPosition > 0 ? "shadow " : "shadow-none ",
-        "transition-shadow sticky top-0 bg-[#ffffff] block"
+        "transition-shadow sticky top-0 bg-[#ffffff] block z-[999]"
       )}
       
     >

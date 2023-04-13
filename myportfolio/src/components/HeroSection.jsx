@@ -8,11 +8,12 @@ import { AiOutlineGithub, AiFillLinkedin } from "react-icons/ai";
 import { motion } from "framer-motion";
 import DelayedLinks from "../reusable component/DelayedLinks";
 
-
-const HeroSection = ({ nav, belowMd, }) => {
+const HeroSection = ({ nav, belowMd }) => {
   const [isHovering, setIsHovering] = useState(false);
   const [isClicked, setIsClicked] = useState(false);
   const [isGithub, setIsGithub] = useState(false);
+  const [isLinkedIn, setIsLinkedIn] = useState(false);
+  const [isClip, setIsClip] = useState(false);
 
   const handleClick = () => {
     setIsClicked(!isClicked);
@@ -22,19 +23,31 @@ const HeroSection = ({ nav, belowMd, }) => {
     setIsGithub(!isGithub);
   };
   
+  const handleLinkedIn = () => {
+    setIsLinkedIn(!isLinkedIn);
+  };
+
+
   useEffect(() => {
+    const clipTimeIn = setTimeout (() => {
+      setIsClip(true);
+    }, 2000)
+
+
     const clickTimeout = setTimeout(() => {
       setIsClicked(false);
       setIsGithub(false);
+      setIsLinkedIn(false);
+      setIsClip(false);
       setIsHovering(false);
     }, 2200);
 
     return () => {
+      clearTimeout(clipTimeIn);
       clearTimeout(clickTimeout);
     };
-  }, [isClicked, isGithub]);
-  
-  
+  }, [isClicked, isGithub, isLinkedIn]);
+
   return (
     <section
       id="herosection"
@@ -54,18 +67,19 @@ const HeroSection = ({ nav, belowMd, }) => {
                 key="sword"
                 animate={{
                   x:
-                    (isHovering && isClicked) || (!isHovering && isClicked)
-                      ? [null, 66, 200, 150]
-                      : (isHovering && isGithub) || (!isHovering && isGithub)
-                      ? [null, 66, 100, 20]
+                  (isHovering && isGithub) || (!isHovering && isGithub)
+                  ? [null, 66, 100, 20]
+                  :
+                  (isHovering && isLinkedIn) || (!isHovering && isLinkedIn)
+                  ? [null, 66, 200, 150] 
                       : isHovering
                       ? 5
                       : 0,
-                  rotate: isClicked || isGithub ? [0, -5, 90, -100] : 0,
+                  rotate: isClicked || isGithub || isLinkedIn ? [0, -5, 90, -100] : 0,
                 }}
                 transition={{
                   x:
-                    isClicked || isGithub ? { duration: 1 } : { duration: 0.1 },
+                    isClicked || isGithub || isLinkedIn ? { duration: 1 } : { duration: 0.1 },
                   rotate: {
                     delay: 0.2,
                     duration: 1.8,
@@ -94,7 +108,6 @@ const HeroSection = ({ nav, belowMd, }) => {
                 src={sheath}
                 alt="sheath"
                 className="absolute flex items-center justify-center w-[300px] xxxsm:w-[260px] xxxxsm:w-[265px]  mt-5"
-                
               />
             ) : (
               ""
@@ -112,6 +125,10 @@ const HeroSection = ({ nav, belowMd, }) => {
               <AiOutlineGithub
                 style={{
                   pointerEvents: isClicked || isGithub ? "none" : "auto",
+                  clipPath:
+                    ((isClicked || isGithub) && isClip)
+                      ? "polygon(33% 24%, 81% 24%, 90% 44%, 91% 87%, 68% 93%, 33% 93%, 16% 81%, 18% 44%)"
+                      : "none",
                 }}
                 onClick={handleGithub}
                 className="mx-10"
@@ -127,9 +144,13 @@ const HeroSection = ({ nav, belowMd, }) => {
             >
               <AiFillLinkedin
                 style={{
-                  pointerEvents: isClicked || isGithub ? "none" : "auto",
+                  pointerEvents: isClicked || isLinkedIn ? "none" : "auto",
+                  clipPath:
+                    ((isClicked || isLinkedIn) && isClip)
+                      ? "polygon(32% 38%, 80% 27%, 100% 100%, 0% 100%)"
+                      : "none",
                 }}
-                onClick={handleClick}
+                onClick={handleLinkedIn}
                 className="mx-10"
                 size={"38px"}
               />
@@ -142,7 +163,7 @@ const HeroSection = ({ nav, belowMd, }) => {
               src={mainpic}
               alt="mypic"
               className={`${hover.mainpic}`}
-              style={{ opacity: isHovering || isClicked ? 0 : 1 }}
+              style={{ opacity: (isHovering || isClicked || isLinkedIn || isGithub) ? 0 : 1 }}
             />
           ) : (
             ""
@@ -152,7 +173,7 @@ const HeroSection = ({ nav, belowMd, }) => {
               src={jappic}
               alt="jappic"
               className={`${hover.jappic}`}
-              style={{ opacity: isHovering || isClicked ? 1 : 0 }}
+              style={{ opacity: (isHovering || isClicked || isLinkedIn || isGithub) ? 1 : 0 }}
             />
           ) : (
             ""
