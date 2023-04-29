@@ -21,4 +21,10 @@ export default [
     description: ' Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente, numquam. ',
     
     },
+    {
+    title: 'Web Development',
+    icon: <VscCode className='w-full h-full' />,
+    description: ' Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente, numquam. ',
+    
+    },
 ]

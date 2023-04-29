@@ -4,8 +4,9 @@ import NavItems from "./NavItems";
 import { useScrollPosition } from "../hooks/useScrollPosition";
 import Modal from "../modal/Modal";
 import { useState } from "react";
+import { Link } from "react-scroll";
 
-const NavBar = ({ nav, setNav, belowMd, navBarTop }) => {
+const NavBar = ({ nav, setNav, belowMd }) => {
   const [isOpen, setOpen] = useState(false);
 
   const handleNav = () => {
@@ -28,22 +29,28 @@ const NavBar = ({ nav, setNav, belowMd, navBarTop }) => {
     <div
       className={classNames(
         scrollPosition > 0 ? "shadow " : "shadow-none ",
-        "transition-shadow sticky top-0 bg-[#ffffff] block z-[999]"
+        "sticky top-0 z-[999] block bg-[#ffffff] bg-samurai  bg-cover transition-shadow "
       )}
-      
     >
-      <header className="flex max-w-[62rem] px-5 sm:px-3 h-16 mx-auto justify-between items-center" >
-        <a aria-label="logo" href="/">
-          <h1 className="font-shuriken tracking-wide uppercase cursor-pointer rounded-md text-2xl md:px-5 md:text-xl">
+      <header className="mx-auto flex h-14 max-w-[62rem] items-center justify-between px-5 sm:px-3">
+        <Link
+          to="/"
+          spy={true}
+          smooth={true}
+          offset={-100}
+          duration={500}
+          aria-label="logo"
+        >
+          <h1 className="cursor-pointer rounded-md font-shuriken text-2xl uppercase tracking-wide md:px-5 md:text-xl">
             joshua betco
           </h1>
-        </a>
-        <nav className="md:flex hidden md-1 z-[3]">
+        </Link>
+        <nav className="md-1 z-[3] hidden md:flex">
           <Hamburger toggled={isOpen} onToggle={handleNav} size={28} />
         </nav>
 
         <nav className="md:hidden">
-          <ul className="flex justify-center items-center gap-5 font-terex tracking-widest text-xl uppercase">
+          <ul className="flex items-center justify-center gap-5 font-shuriken text-sm uppercase tracking-widest">
             <NavItems />
           </ul>
         </nav>

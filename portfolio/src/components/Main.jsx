@@ -5,7 +5,7 @@ import {FaTwitter, FaFacebook, FaInstagram, FaLinkedinIn} from 'react-icons/fa'
 const Main = () => {
   return (
     <div id='main'>
-    <img className='w-full h-screen object-cover object-left scale-x-[-1]' src="https://images.unsplash.com/photo-1569254994521-ddbb54af5ae8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1112&q=80" alt="" />
+    <img className='w-full h-scree n object-cover object-left scale-x-[-1]' src="https://images.unsplash.com/photo-1569254994521-ddbb54af5ae8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1112&q=80" alt="" />
     <div className="w-full h-screen absolute top-0 bg-white/50">
         <div className='max-w-[700px] m-auto h-full flex flex-col justify-center lg:items-start items-center'>
             <h1 className='sm:text-5xl text-4xl font-bold text-gray-800'>I'm Joshua Betco</h1>

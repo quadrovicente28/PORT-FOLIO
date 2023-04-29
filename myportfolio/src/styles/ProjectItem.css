@@ -1,0 +1,100 @@
+.ProjectItem {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+    margin-bottom: 32px;
+    transition: box-shadow 0.2s ease-out;
+  }
+  
+  .ProjectItem:hover {
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .ProjectItem-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+  
+  .ProjectItem-title {
+    font-size: 24px;
+    font-weight: 600;
+    margin: 0;
+  }
+  
+  .ProjectItem-links {
+    display: flex;
+    align-items: center;
+  }
+  
+  .ProjectItem-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: #f1f1f1;
+    margin-left: 8px;
+    color: #444;
+    transition: background-color 0.2s ease-out, color 0.2s ease-out;
+  }
+  
+  .ProjectItem-links a:hover {
+    background-color: #444;
+    color: #f1f1f1;
+  }
+  
+  .ProjectItem-image-container {
+    position: relative;
+  }
+  
+  .ProjectItem-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  .ProjectItem-ofuda {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #e8dab2;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    animation: rollingOfuda 2s ease-in-out infinite;
+  }
+  
+  .ProjectItem-ofuda-text {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0;
+    color: #444;
+  }
+  
+  @keyframes rollingOfuda {
+    0% {
+      transform: translateX(-50%) rotate(0deg);
+    }
+    50% {
+      transform: translateX(-50%) rotate(20deg);
+    }
+    100% {
+      transform: translateX(-50%) rotate(0deg);
+    }
+  }
+  
+  .ProjectItem-tech {
+    font-size: 16px;
+    color: #999;
+    margin-top: 16px;
+  }

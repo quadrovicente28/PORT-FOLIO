@@ -11,10 +11,10 @@ const Modal = ({setNav, setOpen}) => {
  
 
   return (
-    <div className="md:flex justify-end hidden">
+    <div className="md:flex justify-end hidden ">
       <BackDrop closeModal={closeModal} />
-      <nav className="z-[2] absolute w-[75%] max-w-[62rem] h-[100vh] bg-[#fff] top-0 flex justify-center items-center">
-        <ul className="md:flex flex-col items-center gap-5 font-terex text-2xl tracking-wider hidden uppercase">
+      <nav className="z-[2] absolute w-[75%] max-w-[62rem] h-[100vh] bg-[#fff] top-0 flex justify-center items-center bg-samurai bg-cover">
+        <ul className="md:flex flex-col items-center gap-10 font-shuriken text-2xl tracking-wider hidden uppercase">
           <NavItems closeModal={closeModal} />
         </ul>
       </nav>

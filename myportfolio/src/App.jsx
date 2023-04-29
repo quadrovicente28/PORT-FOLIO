@@ -8,8 +8,6 @@ import { useMediaQuery } from "@react-hook/media-query";
 function App() {
   const [nav, setNav] = useState(false);
   const belowMd = useMediaQuery("(max-width: 767px)");
-
-
   
   return (
     <div>

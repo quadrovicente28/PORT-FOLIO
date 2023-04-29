@@ -1,15 +1,17 @@
+import { Link } from 'react-scroll'
+
 const NavItems = ({ closeModal }) => {
   return (
     <>
       <li>
-        <a href="#projects" onClick={closeModal}>
+        <Link to="projects" spy={true} smooth={true} offset={1} duration={500} onClick={closeModal}>
           Projects
-        </a>
+        </Link>
       </li>
       <li>
-        <a href="#about" onClick={closeModal}>
+        <Link to="about" spy={true} smooth={true} offset={1} duration={500} onClick={closeModal}>
           About
-        </a>
+        </Link>
       </li>
       <li>
         <a href="#contact" onClick={closeModal}>

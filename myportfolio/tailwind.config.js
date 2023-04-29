@@ -28,17 +28,17 @@ export default {
       md: { max: "767px" },
       // => @media (max-width: 767px) { ... }
 
-      sm: { max: "639px" },
+      sm: { max: "686px" },
       // => @media (max-width: 639px) { ... }
       xsm: { max: "582px" },
       xxsm: { max: "485px" },
-      xxxsm: {max: "320px"},
+      xxxsm: {max: "331px"},
       xxxxsm: {max: "357px"},
     },
     extend: {
-      backgroundImage: {
-        'samurai': "url('../assets/bg.jpg')",
-      }
+      backgroundImage: theme => ({
+        'samurai': "url('./assets/1234.jpg')",
+      })
     },
   },
   plugins: [],
