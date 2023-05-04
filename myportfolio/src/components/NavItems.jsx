@@ -1,25 +1,39 @@
-import { Link } from 'react-scroll'
-
+import { Link } from "react-scroll";
 const NavItems = ({ closeModal }) => {
+
+ 
+
   return (
     <>
-      <li>
-        <Link to="projects" spy={true} smooth={true} offset={1} duration={500} onClick={closeModal}>
+      <li className=" hover:text-red-600 transition duration-100 active:text-red-700">
+        <Link
+          to="projects"
+          smooth={true}
+          duration={500}
+          onClick={closeModal}
+          className="cursor-katana text-center"
+        >
           Projects
         </Link>
       </li>
-      <li>
-        <Link to="about" spy={true} smooth={true} offset={1} duration={500} onClick={closeModal}>
+      <li className="hover:text-red-600 transition duration-100 active:text-red-700">
+        <Link
+          to="about"
+          smooth={true}
+          duration={500}
+          onClick={closeModal}
+          className="cursor-katana text-center"
+        >
           About
         </Link>
       </li>
-      <li>
-        <a href="#contact" onClick={closeModal}>
+      <li className="hover:text-red-600 transition duration-100 active:text-red-700">
+        <a href="#contact" className="cursor-katana" onClick={closeModal}>
           Contact
         </a>
       </li>
-      <li>
-        <a href="#resume" onClick={closeModal}>
+      <li className="hover:text-red-600 transition duration-100 active:text-red-700">
+        <a href="#resume" className="cursor-katana" onClick={closeModal}>
           Resume
         </a>
       </li>

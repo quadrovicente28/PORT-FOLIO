@@ -7,11 +7,10 @@ const Projects = () => {
   return (
     <>
       <div id="projects" className="mb-20"></div>
-      <div className="h-screen grid max-w-[62rem] px-5 sm:px-3 md:mx-5 mx-auto ">
-        
-          <SectionTitle>Projects</SectionTitle>
-        
-        <div className="grid grid-cols-2 gap-5">
+      <div className="mx-auto grid h-auto max-w-[62rem] px-5 md:mx-5 sm:px-3 ">
+        <SectionTitle>Projects</SectionTitle>
+
+        <div className="grid grid-cols-1 gap-5 mt-2">
           {projects.map((project) => (
             <ProjectItem
               key={project.title}
@@ -19,7 +18,8 @@ const Projects = () => {
               title={project.title}
               tech={project.tech}
               projUrl={project.projUrl}
-            ></ProjectItem>
+            >
+            </ProjectItem>
           ))}
         </div>
       </div>

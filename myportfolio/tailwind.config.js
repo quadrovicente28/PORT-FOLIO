@@ -6,6 +6,10 @@ export default {
   ],
   
   theme: {
+    cursor: {
+      'katana': 'url("./assets/Katana.cur"), auto',
+      'pointer': 'pointer',
+    },
     fontFamily: {
       poppins: ['Poppins', 'sans-serif'],
       karasha: ['Karasha', 'sans-serif'],

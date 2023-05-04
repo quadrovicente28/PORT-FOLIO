@@ -6,6 +6,7 @@ import Modal from "../modal/Modal";
 import { useState } from "react";
 import { Link } from "react-scroll";
 
+
 const NavBar = ({ nav, setNav, belowMd }) => {
   const [isOpen, setOpen] = useState(false);
 
@@ -29,17 +30,18 @@ const NavBar = ({ nav, setNav, belowMd }) => {
     <div
       className={classNames(
         scrollPosition > 0 ? "shadow " : "shadow-none ",
-        "sticky top-0 z-[999] block bg-[#ffffff] bg-samurai  bg-cover transition-shadow "
+        "sticky top-0 z-[999] block bg-[#ffffff] bg-samurai bg-cover transition-shadow"
       )}
     >
       <header className="mx-auto flex h-14 max-w-[62rem] items-center justify-between px-5 sm:px-3">
         <Link
-          to="/"
+          to="hero"
           spy={true}
           smooth={true}
           offset={-100}
           duration={500}
           aria-label="logo"
+          className="hover:text-red-600 transition duration-100 active:text-red-700"
         >
           <h1 className="cursor-pointer rounded-md font-shuriken text-2xl uppercase tracking-wide md:px-5 md:text-xl">
             joshua betco

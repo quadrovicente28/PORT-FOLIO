@@ -19,17 +19,11 @@ const HeroSection = ({ nav, belowMd }) => {
   const [isLinkedIn, setIsLinkedIn] = useState(false);
   const [isClip, setIsClip] = useState(false);
 
-  const handleClick = () => {
-    setIsClicked(!isClicked);
-  };
+  const handleClick = () => setIsClicked(!isClicked);
 
-  const handleGithub = () => {
-    setIsGithub(!isGithub);
-  };
+  const handleGithub = () => setIsGithub(!isGithub);
 
-  const handleLinkedIn = () => {
-    setIsLinkedIn(!isLinkedIn);
-  };
+  const handleLinkedIn = () => setIsLinkedIn(!isLinkedIn);
 
   useEffect(() => {
     const clipTimeIn = setTimeout(() => {
@@ -53,7 +47,7 @@ const HeroSection = ({ nav, belowMd }) => {
   return (
     <div className=" h-screen bg-samurai bg-cover bg-center">
       <section
-        id="/"
+        id="hero"
         className="mx-auto grid h-[100vh] max-w-[62rem] px-5 md:mx-5 sm:px-3"
       >
         <div className="flex w-[100%] md:flex-col">
@@ -61,13 +55,10 @@ const HeroSection = ({ nav, belowMd }) => {
             <h1 className="md:flex-0 mb-5 py-2 font-shuriken text-3xl uppercase tracking-wide md:mb-0 md:mt-3 md:text-2xl xxxsm:text-xl">
               Hello, I'm Joshua
             </h1>
-            <p className="mb-5 font-poppins text-2xl capitalize md:mb-2 md:text-xl">
-              A junior web developer
-            </p>
             <p className="text-justify font-poppins text-base md:text-sm">
               Welcome to my portfolio! I'm Joshua, a recent college graduate
               with a degree in a different field, but my passion lies in web
-              development. Over the past year, I've been honing my skills and
+              development. Over the past months, I've been honing my skills and
               gaining experience in front-end and back-end web development.
             </p>
             <div className="flex flex-col items-center">
@@ -121,7 +112,7 @@ const HeroSection = ({ nav, belowMd }) => {
                   whileHover={{ x: -5 }}
                   src={sheath}
                   alt="sheath"
-                  className="absolute mt-5 flex w-[300px] items-center justify-center xxxsm:w-[260px]  xxxxsm:w-[265px]"
+                  className="absolute mt-5 flex w-[300px] items-center justify-center xxxsm:w-[260px] xxxxsm:w-[265px]"
                 />
               ) : (
                 ""
@@ -171,23 +162,21 @@ const HeroSection = ({ nav, belowMd }) => {
               </DelayedLinks>
             </div>
             <div className="flex justify-center xxsm:gap-10">
-              <Link
-                to="projects"
-                spy={true}
-                smooth={true}
-                offset={1}
-                duration={500}
-              >
+              <Link to="projects" smooth={true} offset={1} duration={500}>
                 <div className="flex">
-                  <p className="mt-5 font-poppins text-sm uppercase tracking-wide xxsm:text-xs">
+                  <p className="mt-5 cursor-pointer font-poppins text-sm uppercase tracking-wide xxsm:text-xs">
                     <span className="xxsm:hidden">Look at my</span> work
                   </p>
-                  <img src={gif} alt="" className="h-28 xxxsm:hidden" />
+                  <img
+                    src={gif}
+                    alt=""
+                    className="h-28 cursor-pointer xxxsm:hidden"
+                  />
                 </div>
               </Link>
               <a href="#">
                 <div className="flex">
-                  <p className="mt-5 font-poppins text-sm uppercase tracking-wide xxsm:text-xs">
+                  <p className="mr-1 mt-5 font-poppins text-sm uppercase tracking-wide xxsm:text-xs">
                     <span className="xxsm:hidden">Look at my</span> resume
                   </p>
                   <VscLinkExternal
@@ -198,11 +187,11 @@ const HeroSection = ({ nav, belowMd }) => {
               </a>
             </div>
           </div>
-          <div className="mt-36 flex flex-1 items-start justify-end md:order-1 md:mx-0 md:mt-0  md:flex-none md:items-start md:justify-center">
+          <div className=" flex h-[90vh] flex-1 items-center justify-end md:order-1 md:mx-0 md:mt-0 md:h-auto md:flex-none md:items-start md:justify-center">
             <img
               src={mainpic}
               alt="mypic"
-              className={`${hover.mainpic} sm:max-w-[200px] `}
+              className={`${hover.mainpic} md:max-h-[300px] md:max-w-[400px] sm:max-w-[200px] `}
               style={{
                 opacity:
                   isHovering || isClicked || isLinkedIn || isGithub ? 0 : 1,
@@ -212,7 +201,7 @@ const HeroSection = ({ nav, belowMd }) => {
             <img
               src={jappic}
               alt="jappic"
-              className={`${hover.jappic} sm:max-w-[200px] `}
+              className={`${hover.jappic} md:max-h-[300px] md:max-w-[300px] sm:max-w-[200px]`}
               style={{
                 opacity:
                   isHovering || isClicked || isLinkedIn || isGithub ? 1 : 0,
