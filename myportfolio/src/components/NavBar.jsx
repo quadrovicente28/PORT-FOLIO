@@ -4,8 +4,6 @@ import NavItems from "./NavItems";
 import { useScrollPosition } from "../hooks/useScrollPosition";
 import Modal from "../modal/Modal";
 import { useState } from "react";
-import { Link } from "react-scroll";
-
 
 const NavBar = ({ nav, setNav, belowMd }) => {
   const [isOpen, setOpen] = useState(false);
@@ -34,19 +32,15 @@ const NavBar = ({ nav, setNav, belowMd }) => {
       )}
     >
       <header className="mx-auto flex h-14 max-w-[62rem] items-center justify-between px-5 sm:px-3">
-        <Link
-          to="hero"
-          spy={true}
-          smooth={true}
-          offset={-100}
-          duration={500}
+        <a
+          href="/"
           aria-label="logo"
           className="hover:text-red-600 transition duration-100 active:text-red-700"
         >
           <h1 className="cursor-pointer rounded-md font-shuriken text-2xl uppercase tracking-wide md:px-5 md:text-xl">
             joshua betco
           </h1>
-        </Link>
+        </a>
         <nav className="md-1 z-[3] hidden md:flex">
           <Hamburger toggled={isOpen} onToggle={handleNav} size={28} />
         </nav>

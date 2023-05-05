@@ -7,6 +7,18 @@ const NavItems = ({ closeModal }) => {
     <>
       <li className=" hover:text-red-600 transition duration-100 active:text-red-700">
         <Link
+          to="hero"
+          offset={-100}
+          smooth={true}
+          duration={500}
+          onClick={closeModal}
+          className="cursor-katana text-center"
+        >
+          Home
+        </Link>
+      </li>
+      <li className=" hover:text-red-600 transition duration-100 active:text-red-700">
+        <Link
           to="projects"
           smooth={true}
           duration={500}
@@ -30,11 +42,6 @@ const NavItems = ({ closeModal }) => {
       <li className="hover:text-red-600 transition duration-100 active:text-red-700">
         <a href="#contact" className="cursor-katana" onClick={closeModal}>
           Contact
-        </a>
-      </li>
-      <li className="hover:text-red-600 transition duration-100 active:text-red-700">
-        <a href="#resume" className="cursor-katana" onClick={closeModal}>
-          Resume
         </a>
       </li>
     </>
